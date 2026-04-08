@@ -148,31 +148,16 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-family: var(--font-head);
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--white);
       cursor: pointer;
     }
-    .logo-icon {
-      width: 32px; height: 32px;
-      background: var(--cta);
-      border-radius: 7px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .logo-icon svg { width: 18px; height: 18px; }
-    .logo-sub {
-      font-size: 10px;
-      font-weight: 300;
-      letter-spacing: .08em;
-      color: #64748B;
+    .logo img {
+      height: 38px;
+      width: auto;
+      background: var(--white);
+      border-radius: 6px;
+      padding: 3px 8px;
       display: block;
-      line-height: 1;
     }
-    .logo-text { display: flex; flex-direction: column; gap: 2px; }
-    .logo-name { line-height: 1; }
 
     .nav-links {
       display: flex;
@@ -698,16 +683,7 @@
 <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
     <a href="#home" class="logo" aria-label="CHRONO Integrations home">
-      <div class="logo-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="9"/>
-          <polyline points="12 7 12 12 15 15"/>
-        </svg>
-      </div>
-      <div class="logo-text">
-        <span class="logo-name">CHRONO</span>
-        <span class="logo-sub">Integrations</span>
-      </div>
+      <img src="logo.jpg" alt="CHRONO Integrations" />
     </a>
 
     <ul class="nav-links" role="list">
