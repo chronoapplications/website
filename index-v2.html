@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHRONO Integrations | Enterprise IT & System Integration Experts</title>
+  <meta name="description" content="CHRONO Integrations specializes in enterprise applications, ESB/SOA, and system integrations. Now building AI-powered mobile applications." />
+  <meta name="keywords" content="enterprise integration, ESB, SOA, system integration, enterprise applications, mobile apps, IT consulting" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0F172A" />
+  <meta property="og:title" content="CHRONO Integrations | Enterprise IT & System Integration" />
+  <meta property="og:description" content="Expert enterprise application development, ESB/SOA architecture, and system integration services." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chrono-integrations.github.io/" />
+  <meta property="og:image" content="https://chrono-integrations.github.io/logo.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CHRONO Integrations | Enterprise IT & System Integration" />
+  <meta name="twitter:description" content="Enterprise applications, ESB/SOA architecture, system integrations — and now AI-powered mobile apps." />
+  <link rel="canonical" href="https://chrono-integrations.github.io/" />
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "CHRONO Integrations",
+    "url": "https://chrono-integrations.github.io/",
+    "logo": "https://chrono-integrations.github.io/logo.png",
+    "description": "Enterprise application development, ESB/SOA architecture, and system integration services. Also builds AI-powered mobile applications.",
+    "email": "chrono.applications@gmail.com",
+    "areaServed": "Worldwide",
+    "knowsAbout": ["Enterprise Application Integration", "Enterprise Service Bus", "Service-Oriented Architecture", "System Integration", "Mobile Application Development"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What kinds of systems can CHRONO Integrations connect?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We work across ERP, CRM, legacy platforms, cloud services, and custom enterprise applications, connecting them into a single, data-consistent ecosystem using ESB/SOA middleware and modern API-based approaches." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you work with legacy or older enterprise systems?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. A large part of our work is modernizing and integrating legacy platforms without disrupting the business processes that depend on them." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can CHRONO build a new mobile application for us?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Using AI-assisted development, we build cross-platform mobile applications that connect natively to your existing enterprise backend, applying the same reliability standards as our integration work." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does CHRONO structure an engagement?",
+        "acceptedAnswer": { "@type": "Answer", "text": "We start with a discovery phase to understand your systems and goals, move into architecture and design, then implement and integrate, followed by ongoing support as your systems evolve." }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I get in touch?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Email us directly at chrono.applications@gmail.com. We typically respond within one business day." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Reset & Variables ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #0F172A;
+      --navy-mid:  #1E293B;
+      --slate:     #334155;
+      --cta:       #0369A1;
+      --cta-hover: #0284C7;
+      --sky:       #0EA5E9;
+      --bg:        #F8FAFC;
+      --bg-alt:    #F1F5F9;
+      --text:      #020617;
+      --text-muted:#475569;
+      --border:    #E2E8F0;
+      --white:     #FFFFFF;
+
+      --font-head: 'Lexend', system-ui, sans-serif;
+      --font-body: 'Source Sans 3', system-ui, sans-serif;
+
+      --max-w: 1200px;
+      --section-pad: 96px 24px;
+      --radius: 10px;
+      --shadow: 0 4px 24px rgba(15,23,42,.08);
+      --shadow-lg: 0 8px 40px rgba(15,23,42,.14);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Utility ───────────────────────────────────────────────── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section { padding: var(--section-pad); }
+    .section--dark { background: var(--navy); color: var(--white); }
+    .section--alt  { background: var(--bg-alt); }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--cta);
+      color: var(--white);
+      font-family: var(--font-head);
+      font-weight: 500;
+      padding: 12px 20px;
+      border-radius: 0 0 8px 0;
+      z-index: 100;
+    }
+    .skip-link:focus { left: 0; }
+
+    .tag {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--sky);
+      margin-bottom: 16px;
+    }
+    .section--dark .tag { color: var(--sky); }
+
+    h1, h2, h3 { font-family: var(--font-head); font-weight: 600; line-height: 1.2; }
+
+    .section-heading {
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 580px;
+    }
+    .section--dark .section-sub { color: #94A3B8; }
+
+    .section-header { margin-bottom: 56px; }
+
+    /* ── Scroll reveal ─────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Buttons ───────────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      font-family: var(--font-head);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      cursor: pointer;
+      border: none;
+      transition: background 180ms ease, box-shadow 180ms ease, transform 120ms ease;
+    }
+    .btn:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+
+    .btn-primary {
+      background: var(--cta);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--cta-hover); box-shadow: 0 6px 20px rgba(3,105,161,.35); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,.4);
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+
+    /* ── Navigation ────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(15,23,42,.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      transition: box-shadow 200ms ease;
+    }
+    .nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,.3); }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .logo img {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-head);
+      font-size: 14px;
+      font-weight: 400;
+      color: #94A3B8;
+      transition: color 150ms;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links .nav-cta a {
+      background: var(--cta);
+      color: var(--white);
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: background 150ms, box-shadow 150ms;
+    }
+    .nav-links .nav-cta a:hover { background: var(--cta-hover); box-shadow: 0 4px 14px rgba(3,105,161,.4); }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      border: none;
+      background: transparent;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 200ms, opacity 200ms;
+    }
+    .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 16px 24px 24px;
+      gap: 4px;
+    }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a {
+      font-family: var(--font-head);
+      font-size: 15px;
+      color: #94A3B8;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      transition: color 150ms;
+    }
+    .nav-mobile a:hover { color: var(--white); }
+    .nav-mobile a:last-child { border-bottom: none; }
+    .nav-mobile .mobile-cta {
+      margin-top: 8px;
+      background: var(--cta);
+      color: var(--white) !important;
+      text-align: center;
+      padding: 12px !important;
+      border-radius: 8px;
+      font-weight: 500;
+      border-bottom: none !important;
+    }
+
+    /* ── Hero ──────────────────────────────────────────────────── */
+    #home {
+      background: var(--navy);
+      padding: 160px 24px 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(14,165,233,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14,165,233,.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .hero-glow {
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(3,105,161,.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(3,105,161,.2);
+      border: 1px solid rgba(3,105,161,.35);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-family: var(--font-head);
+      font-size: 13px;
+      color: var(--sky);
+      margin-bottom: 28px;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--sky);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .4; }
+    }
+
+    .hero-heading {
+      font-size: clamp(36px, 6vw, 68px);
+      color: var(--white);
+      line-height: 1.1;
+      max-width: 780px;
+      margin-bottom: 24px;
+    }
+    .hero-heading em {
+      font-style: normal;
+      color: var(--sky);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 19px);
+      color: #94A3B8;
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 72px;
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 40px;
+    }
+    .stat-value {
+      font-family: var(--font-head);
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 14px;
+      color: #64748B;
+    }
+
+    /* ── Services ──────────────────────────────────────────────── */
+    #services { background: var(--bg); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 36px 32px;
+      transition: box-shadow 200ms, transform 200ms, border-color 200ms;
+      cursor: default;
+    }
+    .service-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+      border-color: #CBD5E1;
+    }
+
+    .service-icon {
+      width: 52px; height: 52px;
+      background: #EFF6FF;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+      transition: background 200ms;
+    }
+    .service-card:hover .service-icon { background: #DBEAFE; }
+    .service-icon svg { width: 26px; height: 26px; color: var(--cta); }
+
+    .service-title {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .service-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .badge {
+      font-family: var(--font-head);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: #F1F5F9;
+      color: var(--slate);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Trust bar ─────────────────────────────────────────────── */
+    .trust-bar {
+      background: var(--navy-mid);
+      padding: 40px 24px;
+    }
+    .trust-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #94A3B8;
+      font-family: var(--font-head);
+      font-size: 14px;
+    }
+    .trust-item svg { width: 20px; height: 20px; color: var(--sky); flex-shrink: 0; }
+
+    /* ── Approach ──────────────────────────────────────────────── */
+    #approach { background: var(--bg-alt); }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .approach-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 28px;
+      position: relative;
+    }
+    .approach-num {
+      font-family: var(--font-head);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--sky);
+      letter-spacing: .06em;
+      margin-bottom: 18px;
+    }
+    .approach-card h3 {
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .approach-card p {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .approach-connector {
+      display: none;
+    }
+    @media (min-width: 901px) {
+      .approach-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    /* ── Mobile ────────────────────────────────────────────────── */
+    #mobile { background: var(--bg); }
+
+    .mobile-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .mobile-features {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .feature-item {
+      display: flex;
+      gap: 16px;
+    }
+    .feature-icon {
+      width: 44px; height: 44px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(15,23,42,.06);
+    }
+    .feature-icon svg { width: 20px; height: 20px; color: var(--cta); }
+    .feature-text h3 {
+      font-size: 17px;
+      font-family: var(--font-head);
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .feature-text p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .mobile-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .phone-mockup {
+      width: 240px;
+      background: var(--navy);
+      border-radius: 36px;
+      padding: 16px;
+      box-shadow: 0 32px 80px rgba(15,23,42,.25), 0 0 0 1px rgba(255,255,255,.08);
+      position: relative;
+    }
+    .phone-screen {
+      background: var(--navy-mid);
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 9/18;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .phone-bar {
+      height: 8px;
+      border-radius: 4px;
+      background: rgba(14,165,233,.4);
+    }
+    .phone-bar.short { width: 60%; }
+    .phone-bar.medium { width: 80%; background: rgba(14,165,233,.2); }
+    .phone-card {
+      background: rgba(3,105,161,.2);
+      border: 1px solid rgba(3,105,161,.3);
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .phone-card-line { height: 6px; border-radius: 3px; background: rgba(255,255,255,.15); }
+    .phone-card-line.short { width: 55%; }
+    .phone-dot-row { display: flex; gap: 6px; }
+    .phone-dot {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: rgba(14,165,233,.3);
+    }
+    .mobile-badge {
+      position: absolute;
+      bottom: -16px; right: -16px;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mobile-badge svg { width: 16px; height: 16px; color: var(--cta); }
+
+    /* ── FAQ ───────────────────────────────────────────────────── */
+    #faq { background: var(--bg-alt); }
+
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: transparent;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      padding: 20px 24px;
+      font-family: var(--font-head);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .faq-question:focus-visible { outline: 3px solid var(--sky); outline-offset: -3px; }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      color: var(--cta);
+      transition: transform 200ms ease;
+    }
+    .faq-item[data-open="true"] .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 250ms ease;
+    }
+    .faq-answer p {
+      padding: 0 24px 20px;
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── Contact ───────────────────────────────────────────────── */
+    #contact { background: var(--navy); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .contact-info { color: var(--white); }
+    .contact-info .section-heading { color: var(--white); }
+
+    .contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .contact-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .contact-item-icon {
+      width: 44px; height: 44px;
+      background: rgba(3,105,161,.25);
+      border: 1px solid rgba(3,105,161,.4);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-item-icon svg { width: 20px; height: 20px; color: var(--sky); }
+    .contact-item-body h3 {
+      font-family: var(--font-head);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .contact-item-body p, .contact-item-body a {
+      font-size: 15px;
+      color: #94A3B8;
+    }
+    .contact-item-body a:hover { color: var(--sky); }
+
+    .contact-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    .contact-card h3 {
+      font-family: var(--font-head);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .contact-card p {
+      font-size: 15px;
+      color: #94A3B8;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .contact-email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--cta);
+      color: var(--white) !important;
+      font-family: var(--font-head);
+      font-weight: 500;
+      font-size: 15px;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      transition: background 180ms, box-shadow 180ms;
+      cursor: pointer;
+    }
+    .contact-email-link:hover {
+      background: var(--cta-hover);
+      box-shadow: 0 6px 20px rgba(3,105,161,.4);
+    }
+    .contact-email-link:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+    .contact-email-link svg { width: 16px; height: 16px; }
+
+    /* ── Footer ────────────────────────────────────────────────── */
+    .footer {
+      background: #070D1A;
+      padding: 32px 24px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .footer-copy {
+      font-size: 14px;
+      color: #475569;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 14px;
+      color: #475569;
+      transition: color 150ms;
+    }
+    .footer-links a:hover { color: #94A3B8; }
+
+    /* ── Back to top ───────────────────────────────────────────── */
+    .to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--cta);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 200ms ease, transform 200ms ease, background 150ms;
+      z-index: 40;
+      cursor: pointer;
+    }
+    .to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .to-top:hover { background: var(--cta-hover); }
+    .to-top:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+    .to-top svg { width: 20px; height: 20px; }
+
+    /* ── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .mobile-layout,
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .mobile-visual { order: -1; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --section-pad: 72px 20px; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      #home { padding: 140px 20px 80px; }
+      .hero-stats { gap: 28px; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-heading { font-size: 32px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { text-align: center; }
+      .trust-inner { flex-direction: column; gap: 20px; }
+      .contact-card { padding: 28px 24px; }
+    }
+
+    /* ── Reduced motion ────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- ── Navigation ─────────────────────────────────────────────── -->
+<nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#home" class="logo" aria-label="CHRONO Integrations home">
+      <img src="logo.png" alt="CHRONO Integrations" />
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#mobile">Mobile</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li class="nav-cta"><a href="#contact">Contact Us</a></li>
+    </ul>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="nav-mobile" id="nav-mobile" role="list">
+    <a href="#home" role="listitem">Home</a>
+    <a href="#services" role="listitem">Services</a>
+    <a href="#approach" role="listitem">Approach</a>
+    <a href="#mobile" role="listitem">Mobile</a>
+    <a href="#faq" role="listitem">FAQ</a>
+    <a href="#contact" class="mobile-cta" role="listitem">Contact Us</a>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ── Hero ───────────────────────────────────────────────────── -->
+<section id="home" aria-label="Hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge" aria-label="Enterprise integration experts">
+      <span class="hero-badge-dot" aria-hidden="true"></span>
+      Enterprise Integration Experts
+    </div>
+
+    <h1 class="hero-heading">
+      Connecting Systems.<br/>
+      <em>Powering Business.</em>
+    </h1>
+
+    <p class="hero-sub">
+      CHRONO Integrations delivers enterprise application development, ESB/SOA architecture, and complex system integrations — built to scale with your organization.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#services" class="btn btn-primary">Explore Our Services</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+
+    <div class="hero-stats" aria-label="Company highlights">
+      <div class="stat">
+        <div class="stat-value" data-count-to="15" data-suffix="+">0</div>
+        <div class="stat-label">Years of experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">ESB/SOA</div>
+        <div class="stat-label">Architecture experts</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">Enterprise</div>
+        <div class="stat-label">Grade integrations</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">AI</div>
+        <div class="stat-label">Powered mobile apps</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Services ───────────────────────────────────────────────── -->
+<section id="services" class="section" aria-label="Services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">What We Do</span>
+      <h2 class="section-heading">Enterprise-grade services,<br/>delivered with precision</h2>
+      <p class="section-sub">We specialize in the complex integrations and enterprise applications that keep large organizations running efficiently.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Card 1 -->
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+          </svg>
+        </div>
+        <h3 class="service-title">Enterprise Applications</h3>
+        <p class="service-desc">Custom enterprise software built for scale, reliability, and long-term maintainability. From greenfield development to legacy modernization.</p>
+        <div class="service-tags">
+          <span class="badge">Custom Development</span>
+          <span class="badge">Modernization</span>
+          <span class="badge">Scalable Architecture</span>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+            <circle cx="20" cy="6" r="2" fill="currentColor" stroke="none"/>
+            <circle cx="20" cy="12" r="2" fill="currentColor" stroke="none"/>
+            <circle cx="20" cy="18" r="2" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <h3 class="service-title">ESB & SOA Architecture</h3>
+        <p class="service-desc">Deep expertise in Enterprise Service Bus and Service-Oriented Architecture — designing middleware that connects your entire organization reliably.</p>
+        <div class="service-tags">
+          <span class="badge">ESB</span>
+          <span class="badge">SOA</span>
+          <span class="badge">Middleware</span>
+          <span class="badge">API Gateway</span>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="service-card reveal">
+        <div class="service-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 20V10"/>
+            <path d="M12 20V4"/>
+            <path d="M6 20v-6"/>
+            <path d="M2 20h20"/>
+          </svg>
+        </div>
+        <h3 class="service-title">System Integrations</h3>
+        <p class="service-desc">Connecting disparate systems — ERP, CRM, legacy platforms, cloud services — into a unified, data-consistent ecosystem that works seamlessly.</p>
+        <div class="service-tags">
+          <span class="badge">ERP Integration</span>
+          <span class="badge">Data Pipelines</span>
+          <span class="badge">Cloud Connectors</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Trust bar ───────────────────────────────────────────────── -->
+<div class="trust-bar" aria-label="Trust indicators">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      Enterprise security standards
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+      Proven integration track record
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M12 8v4l3 3"/>
+      </svg>
+      Long-term partnership approach
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+        <circle cx="9" cy="7" r="4"/>
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+      Dedicated expert teams
+    </div>
+  </div>
+</div>
+
+<!-- ── Approach ────────────────────────────────────────────────── -->
+<section id="approach" class="section" aria-label="Our approach">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">How We Work</span>
+      <h2 class="section-heading">A clear path from<br/>problem to production</h2>
+      <p class="section-sub">Every engagement follows the same disciplined process, whether it's a single integration or a full modernization effort.</p>
+    </div>
+
+    <div class="approach-grid">
+      <div class="approach-card reveal">
+        <div class="approach-num">01 — DISCOVER</div>
+        <h3>Understand your systems</h3>
+        <p>We map your existing architecture, integration points, and business constraints before proposing any solution.</p>
+      </div>
+      <div class="approach-card reveal">
+        <div class="approach-num">02 — DESIGN</div>
+        <h3>Architect the solution</h3>
+        <p>We design middleware and integration patterns that fit your environment — not a one-size-fits-all template.</p>
+      </div>
+      <div class="approach-card reveal">
+        <div class="approach-num">03 — BUILD</div>
+        <h3>Implement & integrate</h3>
+        <p>We build and connect systems incrementally, validating at each step to avoid disruption to live operations.</p>
+      </div>
+      <div class="approach-card reveal">
+        <div class="approach-num">04 — SUPPORT</div>
+        <h3>Evolve with you</h3>
+        <p>Systems change. We stay engaged for ongoing support, tuning, and extension as your needs grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Mobile ──────────────────────────────────────────────────── -->
+<section id="mobile" class="section" aria-label="Mobile applications">
+  <div class="container">
+    <div class="mobile-layout">
+
+      <div class="mobile-content reveal">
+        <span class="tag">New Capability</span>
+        <h2 class="section-heading">Mobile Apps,<br/>Built with AI</h2>
+        <p class="section-sub" style="margin-bottom: 0;">
+          We're growing beyond enterprise backends. Using the power of AI-assisted development, CHRONO now builds mobile applications — bringing the same reliability and precision to the mobile world.
+        </p>
+
+        <div class="mobile-features">
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2"/>
+                <path d="M12 18h.01"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <h3>Cross-Platform Development</h3>
+              <p>Applications that run smoothly on both iOS and Android from a single, maintainable codebase.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <h3>AI-Assisted Development</h3>
+              <p>Accelerated delivery using cutting-edge AI tools, without compromising code quality or architecture.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <h3>Enterprise Backend Integration</h3>
+              <p>Mobile apps that connect natively with your existing enterprise systems — our core strength applied to mobile.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mobile-visual reveal" aria-hidden="true">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="phone-bar"></div>
+            <div class="phone-bar short"></div>
+            <div class="phone-card">
+              <div class="phone-card-line"></div>
+              <div class="phone-card-line short"></div>
+              <div class="phone-dot-row">
+                <div class="phone-dot"></div>
+                <div class="phone-dot"></div>
+                <div class="phone-dot"></div>
+              </div>
+            </div>
+            <div class="phone-bar medium"></div>
+            <div class="phone-card">
+              <div class="phone-card-line"></div>
+              <div class="phone-card-line short"></div>
+            </div>
+            <div class="phone-bar short"></div>
+            <div class="phone-bar medium"></div>
+          </div>
+        </div>
+        <div class="mobile-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          AI-powered delivery
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ─────────────────────────────────────────────────────── -->
+<section id="faq" class="section" aria-label="Frequently asked questions">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center; margin-left:auto; margin-right:auto;">
+      <span class="tag">FAQ</span>
+      <h2 class="section-heading">Common questions</h2>
+      <p class="section-sub" style="margin-left:auto; margin-right:auto;">A few things clients often ask before we start working together.</p>
+    </div>
+
+    <div class="faq-list reveal">
+      <div class="faq-item" data-open="false">
+        <button class="faq-question" aria-expanded="false">
+          What kinds of systems can CHRONO connect?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>We work across ERP, CRM, legacy platforms, cloud services, and custom enterprise applications, connecting them into a single, data-consistent ecosystem using ESB/SOA middleware and modern API-based approaches.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-open="false">
+        <button class="faq-question" aria-expanded="false">
+          Do you work with legacy or older enterprise systems?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. A large part of our work is modernizing and integrating legacy platforms without disrupting the business processes that depend on them.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-open="false">
+        <button class="faq-question" aria-expanded="false">
+          Can CHRONO build a new mobile application for us?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. Using AI-assisted development, we build cross-platform mobile applications that connect natively to your existing enterprise backend, applying the same reliability standards as our integration work.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-open="false">
+        <button class="faq-question" aria-expanded="false">
+          How does CHRONO structure an engagement?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>We start with a discovery phase to understand your systems and goals, move into architecture and design, then implement and integrate, followed by ongoing support as your systems evolve — see our <a href="#approach" style="color:var(--cta); text-decoration:underline;">Approach</a> above.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-open="false">
+        <button class="faq-question" aria-expanded="false">
+          How can I get in touch?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        </button>
+        <div class="faq-answer">
+          <p>Email us directly at <a href="mailto:chrono.applications@gmail.com" style="color:var(--cta); text-decoration:underline;">chrono.applications@gmail.com</a>. We typically respond within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ─────────────────────────────────────────────────── -->
+<section id="contact" class="section section--dark" aria-label="Contact us">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info reveal">
+        <span class="tag">Get In Touch</span>
+        <h2 class="section-heading" style="color:white;">Ready to integrate<br/>your systems?</h2>
+        <p class="section-sub">Whether it's a complex enterprise integration challenge or a new mobile initiative, we'd love to hear what you're working on.</p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="contact-item-body">
+              <h3>Email</h3>
+              <a href="mailto:chrono.applications@gmail.com">chrono.applications@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="contact-item-body">
+              <h3>Response time</h3>
+              <p>We typically respond within 1 business day</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card reveal">
+        <h3>Start a conversation</h3>
+        <p>Tell us about your integration challenge or project. No lengthy forms — just reach out directly and we'll take it from there.</p>
+        <a href="mailto:chrono.applications@gmail.com" class="contact-email-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Send Us an Email
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; 2026 CHRONO Integrations. All rights reserved.</p>
+    <ul class="footer-links" role="list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#mobile">Mobile</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<button class="to-top" id="to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ── JS ─────────────────────────────────────────────────────── -->
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Nav scroll shadow + back-to-top visibility
+  const nav = document.getElementById('nav');
+  const toTop = document.getElementById('to-top');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+    toTop.classList.toggle('visible', window.scrollY > 600);
+  }, { passive: true });
+
+  toTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+
+  // Mobile menu toggle
+  const toggle = document.getElementById('nav-toggle');
+  const mobileMenu = document.getElementById('nav-mobile');
+  toggle.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    btn.addEventListener('click', () => {
+      const isOpen = item.getAttribute('data-open') === 'true';
+      item.setAttribute('data-open', String(!isOpen));
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      answer.style.maxHeight = isOpen ? '0px' : answer.scrollHeight + 'px';
+    });
+  });
+
+  // Scroll reveal
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+
+  // Stat count-up
+  if (!reduceMotion) {
+    const counters = document.querySelectorAll('[data-count-to]');
+    const countIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-count-to'), 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        const duration = 1200;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          el.textContent = Math.round(progress * target) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        countIo.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => countIo.observe(el));
+  } else {
+    document.querySelectorAll('[data-count-to]').forEach(el => {
+      el.textContent = el.getAttribute('data-count-to') + (el.getAttribute('data-suffix') || '');
+    });
+  }
+</script>
+
+</body>
+</html>
